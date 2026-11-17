@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "26"
+
+[functions]
+  node_bundler = "esbuild"
+
+# The backend (blog pages, API, images) is the function in netlify/functions/api.mjs.
+# Only the admin page needs a redirect.
+[[redirects]]
+  from = "/admin"
+  to = "/admin.html"
+  status = 200
