@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: jovana-portfolio
+    runtime: node
+    plan: starter
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_VERSION
+        value: "22.13.0"
+      - key: NODE_ENV
+        value: production
+      - key: DATA_DIR
+        value: /var/data
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SITE_URL
+        sync: false
+    disk:
+      name: data
+      mountPath: /var/data
+      sizeGB: 1

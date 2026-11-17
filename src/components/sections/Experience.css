@@ -1,0 +1,59 @@
+/* ============ Experience timeline ============ */
+.timeline { position: relative; max-width: 980px; margin: 0 auto; padding-left: 0; list-style: none; }
+.spine { position: absolute; left: 140px; top: 0; bottom: 0; width: 2px; background: var(--line); }
+.spine i { position: absolute; inset: 0; background: linear-gradient(180deg, var(--violet-2), var(--violet)); transform-origin: 0 0; transform: scaleY(0); }
+.stop { position: relative; display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 0; padding: 0 0 46px; }
+.stop .yr { font-family: var(--mono); font-size: 12.5px; color: var(--mute); padding: 22px 26px 0 0; text-align: right; transition: color .5s; line-height: 1.5; }
+.stop .dot { position: absolute; left: 134px; top: 26px; width: 14px; height: 14px; border-radius: 50%; background: var(--paper); box-shadow: inset 0 0 0 2px var(--faint); transition: 0.5s var(--ease); }
+.stop.lit .dot { background: var(--violet); box-shadow: 0 0 0 6px rgba(139, 92, 246, .18); }
+.stop.lit .yr { color: var(--accent-text); }
+.stop-card { margin-left: 34px; background: var(--card); border-radius: 22px; padding: 22px 24px; box-shadow: inset 0 0 0 1px var(--line); opacity: .55; transform: translateX(10px); transition: 0.7s var(--ease); }
+.stop.lit .stop-card { opacity: 1; transform: none; box-shadow: inset 0 0 0 1px var(--line), 0 24px 40px -30px rgba(76, 29, 149, .45); }
+.stop-card .kind { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .1em; color: var(--accent-text); }
+.stop-card h3 { margin: 6px 0 2px; font-size: clamp(20px, 2vw, 26px); letter-spacing: -0.03em; line-height: 1.15; }
+.stop-card .place { color: var(--ink-2); font-weight: 600; margin: 0 0 10px; }
+.stop-card ul { margin: 0 0 12px; padding-left: 18px; color: var(--ink-2); font-size: 15px; display: grid; gap: 4px; }
+.stop-card .tech { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.stop-card .tech li { font-size: 12px; padding: 4px 9px; border-radius: 999px; background: var(--violet-soft); color: var(--violet-ink); font-weight: 550; }
+details.more summary { cursor: pointer; font-size: 13.5px; font-weight: 600; color: var(--accent-text); list-style: none; margin-bottom: 10px; }
+details.more summary::-webkit-details-marker { display: none; }
+details.more[open] summary { margin-bottom: 8px; }
+.next-card { margin-left: 34px; border: 1.5px dashed var(--violet-3); border-radius: 22px; padding: 26px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; background: var(--glass-soft); }
+.next-card h3 { margin: 0; font-size: clamp(22px, 2.4vw, 32px); letter-spacing: -0.035em; }
+
+@media (max-width: 900px) {
+  .spine { left: 7px; }
+  .stop { grid-template-columns: 1fr; padding-left: 30px; }
+  .stop .yr { text-align: left; padding: 0 0 8px; }
+  .stop .dot { left: 1px; top: 4px; }
+  .stop-card, .next-card { margin-left: 0; }
+  .timeline { padding-left: 0; }
+}
+
+/* ============ Team photos on experience cards ============ */
+.stop-card.has-photos { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 24px; align-items: center; }
+.photo-col { display: grid; justify-items: center; gap: 10px; }
+.photo-stack { position: relative; width: 170px; height: 150px; cursor: zoom-in; border-radius: 12px; }
+.polaroid {
+  position: absolute; left: 50%; top: 50%; width: 128px; height: 104px; margin: -52px 0 0 -64px;
+  padding: 5px; border-radius: 8px; background: var(--card);
+  box-shadow: 0 0 0 1px var(--line), 0 14px 28px -16px rgba(27, 16, 48, .5);
+  transition: transform .6s var(--ease);
+}
+.polaroid img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; display: block; }
+.photo-stack .polaroid:nth-child(1) { transform: rotate(-3deg); }
+.photo-stack .polaroid:nth-child(2) { transform: translate(14px, -10px) rotate(6deg); }
+.photo-stack .polaroid:nth-child(3) { transform: translate(-16px, -6px) rotate(-9deg); }
+.photo-stack:hover .polaroid:nth-child(1), .photo-stack:focus-visible .polaroid:nth-child(1) { transform: translateY(-6px) rotate(0deg) scale(1.04); }
+.photo-stack:hover .polaroid:nth-child(2), .photo-stack:focus-visible .polaroid:nth-child(2) { transform: translate(34px, -16px) rotate(10deg); }
+.photo-stack:hover .polaroid:nth-child(3), .photo-stack:focus-visible .polaroid:nth-child(3) { transform: translate(-36px, -10px) rotate(-13deg); }
+.photo-count {
+  position: absolute; right: 0; top: 4px; z-index: 5; padding: 4px 10px; border-radius: 999px;
+  background: var(--violet); color: #fff; font-size: 11.5px; font-weight: 650;
+}
+.photo-cap { margin: 0; font-size: 12.5px; color: var(--mute); text-align: center; max-width: 180px; }
+@media (max-width: 900px) {
+  .stop-card.has-photos { grid-template-columns: minmax(0, 1fr); }
+  .photo-col { justify-items: start; }
+  .photo-cap { text-align: left; }
+}

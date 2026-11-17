@@ -1,0 +1,55 @@
+/* ============ Booking ============ */
+.book { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 60px); align-items: start; }
+.book-intro p { color: var(--ink-2); max-width: 42ch; }
+.book-intro ul { list-style: none; padding: 0; margin: 26px 0 0; display: grid; gap: 12px; }
+.book-intro li { display: flex; gap: 12px; align-items: center; font-weight: 550; }
+.book-intro li span { width: 34px; height: 34px; border-radius: 12px; background: var(--violet-soft); color: var(--accent-text); display: grid; place-items: center; flex-shrink: 0; }
+.book-intro li svg { width: 17px; height: 17px; }
+.booker { background: var(--card); border-radius: 30px; padding: clamp(20px, 2.4vw, 32px); box-shadow: inset 0 0 0 1px var(--line), var(--shadow); position: relative; overflow: hidden; }
+.booker-step { display: none; }
+.booker-step.on { display: block; animation: stepin .6s var(--ease); }
+@keyframes stepin { from { opacity: 0; transform: translateX(16px); } }
+.bk-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 10px; }
+.bk-head h3 { margin: 0; font-size: 20px; letter-spacing: -0.03em; }
+.bk-nav { display: flex; gap: 6px; }
+.bk-nav button { width: 38px; height: 38px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line); display: grid; place-items: center; transition: .3s; }
+.bk-nav button:hover:not([disabled]) { background: var(--ink); color: var(--on-ink); }
+.bk-nav button[disabled] { opacity: .3; cursor: default; }
+.days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 6px; margin-bottom: 20px; }
+.day { padding: 10px 2px; border-radius: 14px; text-align: center; box-shadow: inset 0 0 0 1px var(--line); transition: .35s var(--ease); display: grid; gap: 2px; }
+.day small { font-family: var(--mono); font-size: 10px; color: var(--mute); text-transform: uppercase; }
+.day b { font-size: 19px; letter-spacing: -0.03em; }
+.day em { font-style: normal; font-size: 10px; color: var(--accent-text); font-weight: 600; }
+.day:hover:not([disabled]) { transform: translateY(-2px); box-shadow: inset 0 0 0 1.5px var(--violet-2); }
+.day[aria-pressed="true"] { background: var(--violet); color: #fff; box-shadow: none; }
+.day[aria-pressed="true"] small, .day[aria-pressed="true"] em { color: rgba(255,255,255,.8); }
+.day[disabled] { opacity: .35; cursor: default; }
+.times-label { font-family: var(--mono); font-size: 11.5px; color: var(--mute); text-transform: uppercase; letter-spacing: .05em; margin: 0 0 10px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+.times { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; max-height: 236px; overflow: auto; padding: 2px; }
+.time { padding: 11px 6px; border-radius: 12px; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; font-size: 14.5px; font-variant-numeric: tabular-nums; transition: .3s var(--ease); }
+.time:hover { box-shadow: inset 0 0 0 1.5px var(--violet); color: var(--accent-text); }
+.time[aria-pressed="true"] { background: var(--ink); color: var(--on-ink); box-shadow: none; }
+.bk-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+.bk-foot p { margin: 0; font-size: 14px; color: var(--ink-2); }
+.hp { position: absolute; left: -9999px; }
+.picked { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: var(--violet-soft); margin-bottom: 16px; font-weight: 600; color: var(--violet-ink); font-size: 14.5px; }
+.picked button { margin-left: auto; font-size: 13px; text-decoration: underline; }
+.form-err { color: var(--danger); font-size: 14px; min-height: 1em; margin: 0; }
+.done { text-align: center; padding: 20px 6px; }
+.check { width: 74px; height: 74px; border-radius: 50%; background: var(--violet); color: #fff; display: grid; place-items: center; margin: 0 auto 18px; animation: pop .7s var(--ease); }
+.check svg { width: 34px; height: 34px; stroke-dasharray: 40; stroke-dashoffset: 40; animation: draw .6s .3s var(--ease) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.done h3 { font-size: 28px; letter-spacing: -0.035em; margin: 0 0 8px; }
+.done p { color: var(--ink-2); margin: 0 0 22px; }
+.done .btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.note-preview { font-size: 13px; color: var(--mute); margin-top: 14px; }
+
+@media (max-width: 900px) {
+  .book { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .days { gap: 4px; }
+  .day { padding: 8px 0; border-radius: 11px; }
+  .day b { font-size: 16px; }
+  .day em { display: none; }
+}

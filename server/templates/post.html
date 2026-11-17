@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{URL}}">
+<meta property="og:image" content="{{IMAGE}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f3fc">
+<meta name="color-scheme" content="light dark">
+<script>(function(){var t=null;try{t=localStorage.getItem("theme")}catch(e){}if(t!=="dark"&&t!=="light")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t;var m=document.querySelector('meta[name="theme-color"]');if(m)m.content=t==="dark"?"#0e0918":"#f6f3fc"})();</script>
+<link rel="canonical" href="{{URL}}">
+<link rel="alternate" type="application/rss+xml" title="Blog" href="/rss.xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400..600&display=swap">
+<link rel="stylesheet" href="/post.css">
+</head>
+<body class="post-page">
+<a class="skip" href="#main">Skip to content</a>
+<header class="post-top">
+  <a class="mark" href="/" aria-label="Jovana Marčeta — home"><span class="mark-dot">JM</span><span class="mark-name">Jovana Marčeta</span></a>
+  <nav aria-label="Post"><button class="theme-btn" type="button" data-theme-toggle aria-label="Switch theme"></button> <a class="btn btn-ghost btn-sm" href="/blog">Blog</a> <a class="btn btn-primary btn-sm" href="/#book">Book a call</a></nav>
+</header>
+<main id="main">
+{{BODY}}
+</main>
+<footer class="foot wrap"><p class="mono">© <span id="y"></span> Jovana Marčeta</p><a class="mono" href="/">Home ↑</a></footer>
+<script type="module" src="/theme.js"></script>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

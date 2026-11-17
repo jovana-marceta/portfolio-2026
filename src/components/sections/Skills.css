@@ -1,0 +1,93 @@
+/* ============ Skills — tech stack grouped by area ============ */
+.skills-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.skills-stats { display: flex; gap: 10px; margin: 0 0 clamp(36px, 6vh, 64px); }
+.skills-stats div { background: var(--card); border-radius: 18px; padding: 12px 18px; box-shadow: inset 0 0 0 1px var(--line); min-width: 104px; }
+.skills-stats dt { font-family: var(--mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--mute); }
+.skills-stats dd { margin: 2px 0 0; font-size: 30px; font-weight: 780; letter-spacing: -0.05em; line-height: 1; }
+.skills-legend { display: flex; align-items: center; gap: 10px; margin: -24px 0 22px; color: var(--mute); font-size: 14px; }
+.legend-chip { pointer-events: none; padding: 5px 12px 5px 5px !important; font-size: 13px !important; }
+
+.stack-grid {
+  display: grid; gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-areas:
+    "back back front"
+    "lang data front"
+    "tools style craft";
+}
+.area-back { grid-area: back; } .area-front { grid-area: front; } .area-lang { grid-area: lang; }
+.area-data { grid-area: data; } .area-tools { grid-area: tools; } .area-style { grid-area: style; } .area-craft { grid-area: craft; }
+
+.stack-card {
+  position: relative; overflow: hidden; display: flex; flex-direction: column;
+  background: var(--card); border-radius: var(--radius); padding: 22px;
+  box-shadow: inset 0 0 0 1px var(--line);
+  transition: box-shadow .6s var(--ease), transform .6s var(--ease), opacity .9s var(--ease);
+}
+.stack-card::before {
+  content: ""; position: absolute; top: -90px; right: -90px; width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--c) 22%, transparent), transparent);
+  transition: transform .9s var(--ease); pointer-events: none;
+}
+.stack-card:hover { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 35%, var(--line)), var(--shadow); }
+.stack-card:hover::before { transform: scale(1.35); }
+
+.stack-head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 14px; align-items: center; margin-bottom: 18px; position: relative; }
+.stack-icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; color: var(--c); background: color-mix(in srgb, var(--c) 12%, var(--card)); }
+:root[data-theme="dark"] .stack-icon { color: color-mix(in srgb, var(--c) 45%, #fff); background: color-mix(in srgb, var(--c) 22%, var(--card)); }
+.stack-icon svg { width: 22px; height: 22px; }
+.stack-head h3 { margin: 0; font-size: 21px; letter-spacing: -0.035em; line-height: 1.1; }
+.stack-head p { margin: 2px 0 0; color: var(--mute); font-size: 13.5px; }
+.stack-count { color: var(--faint); font-size: 13px; align-self: start; }
+
+.tech-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; position: relative; }
+.tech-pill {
+  display: inline-flex; align-items: center; gap: 9px; padding: 6px 13px 6px 6px; border-radius: 999px;
+  background: var(--paper); box-shadow: inset 0 0 0 1px var(--line);
+  font-size: 14px; font-weight: 550; color: var(--ink-2); line-height: 1;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), background .3s, color .3s;
+}
+.tech-sym {
+  width: 26px; height: 26px; border-radius: 9px; display: grid; place-items: center; flex-shrink: 0;
+  font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: -0.02em;
+  background: var(--card); color: var(--mute); box-shadow: inset 0 0 0 1px var(--line);
+}
+.tech-pill.core { background: color-mix(in srgb, var(--c, var(--violet)) 9%, var(--card)); color: var(--ink); font-weight: 650; font-size: 15px; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c, var(--violet)) 28%, transparent); }
+.tech-pill.core .tech-sym { background: var(--c, var(--violet)); color: #fff; box-shadow: none; }
+.tech-pill:hover, .tech-pill:focus-visible { transform: translateY(-2px); box-shadow: inset 0 0 0 1.5px var(--c, var(--violet)), 0 10px 20px -14px rgba(76, 29, 149, .55); color: var(--ink); }
+.skills-legend .tech-pill.core { --c: var(--violet); }
+
+/* staggered entrance of the chips once the card is revealed */
+.stack-card .tech-list li { opacity: 0; transform: translateY(8px); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.stack-card.is-in .tech-list li { opacity: 1; transform: none; }
+.stack-card.is-in .tech-list li:nth-child(1) { transition-delay: .15s; } .stack-card.is-in .tech-list li:nth-child(2) { transition-delay: .19s; }
+.stack-card.is-in .tech-list li:nth-child(3) { transition-delay: .23s; } .stack-card.is-in .tech-list li:nth-child(4) { transition-delay: .27s; }
+.stack-card.is-in .tech-list li:nth-child(5) { transition-delay: .31s; } .stack-card.is-in .tech-list li:nth-child(6) { transition-delay: .35s; }
+.stack-card.is-in .tech-list li:nth-child(7) { transition-delay: .39s; } .stack-card.is-in .tech-list li:nth-child(8) { transition-delay: .43s; }
+.stack-card.is-in .tech-list li:nth-child(n+9) { transition-delay: .47s; }
+
+.stack-foot { margin: auto 0 0; padding-top: 18px; font-size: 13px; color: var(--mute); min-height: 2.6em; position: relative; }
+.stack-foot b { color: var(--ink); font-weight: 650; }
+
+@media (prefers-reduced-motion: reduce) { .stack-card .tech-list li { opacity: 1; transform: none; } }
+
+@media (max-width: 1100px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas: "back back" "front lang" "front data" "tools style" "craft craft";
+  }
+}
+@media (max-width: 700px) {
+  .stack-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "back" "front" "lang" "data" "tools" "style" "craft"; }
+  .skills-stats { width: 100%; margin-top: -10px; }
+  .skills-stats div { flex: 1; min-width: 0; padding: 10px 14px; }
+  .skills-stats dd { font-size: 24px; }
+  .stack-card { padding: 18px; }
+  .tech-pill { font-size: 13.5px; }
+  .tech-pill.core { font-size: 14px; }
+}
+
+/* Technology logos (Devicon) — always on a white tile so every logo reads in both themes */
+.tech-sym.has-icon, .tech-pill.core .tech-sym.has-icon { background: #fff; box-shadow: inset 0 0 0 1px rgba(27, 16, 48, 0.1); }
+.tech-sym.has-icon img { width: 18px; height: 18px; object-fit: contain; display: block; }
+.tech-pill.core .tech-sym.has-icon img { width: 19px; height: 19px; }

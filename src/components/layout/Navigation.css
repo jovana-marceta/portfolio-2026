@@ -1,0 +1,57 @@
+/* ============ Navigation ============ */
+.progress { position: fixed; inset: 0 0 auto 0; height: 2px; background: var(--violet); transform-origin: 0 50%; transform: scaleX(0); z-index: 60; }
+.nav { position: fixed; top: 14px; left: 0; right: 0; z-index: 50; pointer-events: none; }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.mark { pointer-events: auto; display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.mark-dot {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 800; font-size: 14px; letter-spacing: -0.03em;
+  box-shadow: inset 0 0 0 1.5px var(--ink); background: var(--glass-soft);
+  transition: background 0.4s var(--ease), color 0.4s, transform 0.8s var(--ease), box-shadow .4s;
+}
+.mark:hover .mark-dot { transform: rotate(360deg); }
+.mark-name { font-weight: 650; letter-spacing: -0.02em; transition: opacity 0.4s var(--ease), transform .4s var(--ease); }
+.nav.scrolled .mark-dot { background: var(--violet); color: #fff; box-shadow: none; }
+.nav.scrolled .mark-name { opacity: 0; transform: translateX(-8px); pointer-events: none; }
+.nav-pill {
+  margin-left: auto;
+  pointer-events: auto; position: relative; display: flex; gap: 2px; padding: 5px; border-radius: 999px;
+  transition: background 0.4s, box-shadow 0.4s, backdrop-filter .4s;
+}
+.nav.scrolled .nav-pill { background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: inset 0 0 0 1px var(--line), 0 10px 30px -18px rgba(27,16,48,.3); }
+.nav-pill a { position: relative; z-index: 1; padding: 9px 15px; border-radius: 999px; font-size: 14px; font-weight: 550; text-decoration: none; color: var(--ink-2); transition: color 0.35s; }
+.nav-pill a.active { color: #fff; }
+.nav-ind { position: absolute; z-index: 0; top: 5px; height: calc(100% - 10px); border-radius: 999px; background: var(--violet); transition: transform 0.55s var(--ease), width 0.55s var(--ease), opacity .3s; opacity: 0; }
+.menu-btn { display: none; pointer-events: auto; }
+.overlay {
+  position: fixed; inset: 0; z-index: 70; background: var(--paper);
+  clip-path: circle(0% at calc(100% - 50px) 36px); transition: clip-path 0.8s var(--ease);
+  display: flex; flex-direction: column; padding: 90px var(--gutter) 40px; visibility: hidden;
+}
+.overlay.open { clip-path: circle(150% at calc(100% - 50px) 36px); visibility: visible; }
+.overlay ol { list-style: none; margin: 0; padding: 0; }
+.overlay li { opacity: 0; transform: translateY(20px); transition: 0.6s var(--ease); transition-delay: calc(0.15s + var(--i) * 60ms); }
+.overlay.open li { opacity: 1; transform: none; }
+.overlay a { display: flex; align-items: baseline; gap: 14px; text-decoration: none; font-size: clamp(36px, 10vw, 64px); font-weight: 750; letter-spacing: -0.04em; line-height: 1.15; }
+.overlay a span { font-family: var(--mono); font-size: 13px; color: var(--accent-text); font-weight: 500; letter-spacing: 0; }
+.overlay-close { position: absolute; top: 18px; right: var(--gutter); }
+
+.nav-right { display: flex; align-items: center; gap: 8px; pointer-events: auto; }
+.theme-btn {
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0;
+  background: var(--glass); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: inset 0 0 0 1px var(--line); color: var(--ink); position: relative; overflow: hidden;
+  transition: transform .5s var(--ease), background .3s;
+}
+.theme-btn:hover { transform: rotate(-12deg) scale(1.05); }
+.theme-btn svg { width: 20px; height: 20px; position: absolute; transition: transform .6s var(--ease), opacity .4s; }
+.theme-btn .moon { transform: translateY(0) rotate(0); }
+.theme-btn .sun { transform: translateY(140%) rotate(90deg); opacity: 0; }
+:root[data-theme="dark"] .theme-btn .moon { transform: translateY(-140%) rotate(-90deg); opacity: 0; }
+:root[data-theme="dark"] .theme-btn .sun { transform: none; opacity: 1; }
+
+@media (max-width: 900px) {
+  .nav-pill { display: none; }
+  .menu-btn { display: inline-flex; }
+}
+@media (max-width: 520px) { .mark-name { font-size: 15px; } }

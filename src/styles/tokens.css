@@ -1,0 +1,59 @@
+/* ============ Design tokens — lavender paper, plum ink, violet accent ============ */
+:root {
+  --paper: #f6f3fc;
+  --card: #ffffff;
+  --ink: #1b1030;
+  --ink-2: #3d3157;
+  --mute: #776c8c;
+  --faint: #b3aac6;
+  --line: rgba(27, 16, 48, 0.1);
+  --soft: #ece5f8;
+  --violet: #6d28d9;
+  --violet-2: #8b5cf6;
+  --violet-3: #c4b5fd;
+  --violet-soft: #ede6fe;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --gutter: clamp(18px, 4vw, 64px);
+  --radius: 26px;
+  --shadow: 0 30px 60px -30px rgba(76, 29, 149, 0.35), 0 10px 30px -18px rgba(27, 16, 48, 0.25);
+  --on-ink: #ffffff;
+  --ink-hover: #2e1f4d;
+  --accent-text: #6d28d9;
+  --violet-ink: #4c1d95;
+  --glass: rgba(255, 255, 255, 0.72);
+  --glass-soft: rgba(255, 255, 255, 0.5);
+  --danger: #b42318;
+  --band: #1b1030;
+  --code-bg: #1b1030;
+  color-scheme: light;
+  --sans: "Inter Tight", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+
+/* ============ Dark theme ============ */
+:root[data-theme="dark"] {
+  --paper: #0e0918;
+  --card: #171026;
+  --ink: #f2edfb;
+  --ink-2: #cdc4e0;
+  --mute: #9a90b2;
+  --faint: #5c5273;
+  --line: rgba(242, 237, 251, 0.11);
+  --soft: #231936;
+  --violet: #7c3aed;
+  --violet-2: #a78bfa;
+  --violet-3: #5b45a0;
+  --violet-soft: #2a1d48;
+  --on-ink: #120a20;
+  --ink-hover: #ffffff;
+  --accent-text: #b79cff;
+  --violet-ink: #dccfff;
+  --glass: rgba(23, 16, 38, 0.72);
+  --glass-soft: rgba(23, 16, 38, 0.5);
+  --danger: #ff8f85;
+  --band: #2b1a4f;
+  --code-bg: #08050f;
+  --shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7), 0 10px 30px -18px rgba(124, 58, 237, 0.25);
+  color-scheme: dark;
+}

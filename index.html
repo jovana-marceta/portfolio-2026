@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jovana Marčeta — Fullstack Software Engineer</title>
+    <meta
+      name="description"
+      content="Jovana Marčeta — Fullstack Software Engineer in Novi Sad with 6+ years of experience in .NET / C#, Node.js (NestJS), Angular and React. Blog and booking." />
+    <meta
+      property="og:title"
+      content="Jovana Marčeta — Fullstack Software Engineer" />
+    <meta
+      property="og:description"
+      content="6+ years building backend services with .NET / C# and NestJS, and modern interfaces in Angular and React." />
+    <meta property="og:image" content="/portrait.webp" />
+    <meta name="theme-color" content="#7650d8" />
+    <meta name="color-scheme" content="light dark" />
+    <!-- Set the theme before first paint so there is no flash of the wrong colours -->
+    <script>
+      (function () {
+        var t = null;
+        try {
+          t = localStorage.getItem("theme");
+        } catch (e) {}
+        if (t !== "dark" && t !== "light")
+          t = matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+        document.documentElement.dataset.theme = t;
+        var m = document.querySelector('meta[name="theme-color"]');
+        if (m) m.content = t === "dark" ? "#0e0918" : "#7650d8";
+      })();
+    </script>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Blog"
+      href="/rss.xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400..800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400..600&display=swap" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
