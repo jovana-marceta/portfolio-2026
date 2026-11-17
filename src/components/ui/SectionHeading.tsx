@@ -11,16 +11,29 @@ interface Props {
   static?: boolean;
 }
 
-/** "03 — Experience" tag + big heading whose lines slide up from a mask. */
-export function SectionHeading({ id, index, label, lines, static: isStatic }: Props) {
+/** "03 - Experience" tag + big heading whose lines slide up from a mask. */
+export function SectionHeading({
+  id,
+  index,
+  label,
+  lines,
+  static: isStatic,
+}: Props) {
   return (
     <>
-      <p className={`tag mono${isStatic ? "" : " rv"}`}>{index} — {label}</p>
-      <h2 className="h2" id={id}>
+      <p className={`tag mono${isStatic ? "" : " rv"}`}>
+        {index} - {label}
+      </p>
+      <h2 className='h2' id={id}>
         {isStatic
-          ? lines.map((l, i) => <span key={i}>{l}{i < lines.length - 1 ? " " : ""}</span>)
+          ? lines.map((l, i) => (
+              <span key={i}>
+                {l}
+                {i < lines.length - 1 ? " " : ""}
+              </span>
+            ))
           : lines.map((l, i) => (
-              <span className="rv-mask" style={vars({ "--i": i })} key={i}>
+              <span className='rv-mask' style={vars({ "--i": i })} key={i}>
                 <span>{l}</span>
               </span>
             ))}

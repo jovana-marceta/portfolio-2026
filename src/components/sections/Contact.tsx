@@ -53,7 +53,7 @@ export function Contact() {
       id='contact'
       aria-labelledby='contactTitle'>
       <div className='wrap'>
-        <p className='tag mono rv'>08 — Contact</p>
+        <p className='tag mono rv'>08 - Contact</p>
         <h2
           className='contact-title'
           id='contactTitle'

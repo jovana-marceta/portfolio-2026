@@ -46,11 +46,11 @@ export const HERO_CHIPS = [
 export const QUICK_FACTS = [
   { label: "Location", value: "Novi Sad, Serbia" },
   { label: "Now", value: "Software Developer · Red Black Tree" },
-  { label: "Education", value: "First degree, Web Design — VTSNS, Novi Sad" },
+  { label: "Education", value: "First degree, Web Design - VTSNS, Novi Sad" },
   {
     label: "Languages",
     value:
-      "Serbian — native · English — full professional · German — elementary",
+      "Serbian - native · English - full professional · German - elementary",
   },
 ];
 
@@ -63,7 +63,7 @@ export const ID_CARD = {
   back: [
     "Fullstack Software Engineer, 6+ years",
     ".NET / C# & NestJS on the back end, Angular & React on the front",
-    "Web Design graduate (VTSNS) — 9.30 / 10",
+    "Web Design graduate (VTSNS) - 9.30 / 10",
     "Software Developer at Red Black Tree",
     "Conference speaker & WordPress community volunteer",
   ],
@@ -194,7 +194,7 @@ export interface PathStop {
   place: string;
   points: string[];
   tech?: string[];
-  /** Optional team photos — put the files in public/experience/ */
+  /** Optional team photos - put the files in public/experience/ */
   photos?: StopPhoto[];
 }
 
@@ -202,40 +202,37 @@ export interface PathStop {
 export const PATH: PathStop[] = [
   {
     kind: "Education",
-    years: "2012 — 2016",
+    years: "2012 - 2016",
     title: "Graphic Design",
     place: "Technical school “Mileva Marić Einstein”, Novi Sad",
     points: [],
   },
   {
     kind: "Education",
-    years: "2016 — 2019",
-    title: "First degree — Web Design",
+    years: "2016 - 2019",
+    title: "First degree - Web Design",
     place:
       "Higher Education Technical School of Professional Studies in Novi Sad (VTSNS)",
     points: [
       "Grade: 9.30 / 10",
-      "A practice-oriented program combining technical web development with visual design. Gained hands-on experience in building responsive, user-centered websites and web applications from concept to deployment, working with HTML, CSS, JavaScript, PHP, relational databases, and UI/UX principles."
+      "A practice-oriented program combining technical web development with visual design. Gained hands-on experience in building responsive, user-centered websites and web applications from concept to deployment, working with HTML, CSS, JavaScript, PHP, relational databases, and UI/UX principles.",
     ],
-
   },
   {
     kind: "Internship",
-    years: "03/2019 — 05/2019",
+    years: "03/2019 - 05/2019",
     title: "Software Developer Intern",
     place: "ComData doo · Novi Sad",
     points: [
-      "Completed a 3-month software development internship working on an automotive logistics web application in an Agile/Scrum environment. Gained hands-on full-stack experience building front-end interfaces in Angular (including REST API integration and Identity Server authentication) and developing back-end services using C# (.NET) and SQL, while following OOP principles, best practices, and Git workflows"
+      "Completed a 3-month software development internship working on an automotive logistics web application in an Agile/Scrum environment. Gained hands-on full-stack experience building front-end interfaces in Angular (including REST API integration and Identity Server authentication) and developing back-end services using C# (.NET) and SQL, while following OOP principles, best practices, and Git workflows",
     ],
   },
   {
     kind: "Role",
-    years: "01/2020 — 07/2020",
+    years: "01/2020 - 07/2020",
     title: "Frontend Developer",
     place: "Vega IT Sourcing · Novi Sad",
-     photos: [
-      { src: "/experience/vega1.jpg", caption: "" },
-    ],
+    photos: [{ src: "/experience/vega1.jpg", caption: "" }],
     points: [
       "Creating pixel-perfect front-end pages and components for various web platforms",
       "Optimizing pages for various devices and browsers",
@@ -258,8 +255,8 @@ export const PATH: PathStop[] = [
   },
   {
     kind: "Internship",
-    years: "11/2020 — 01/2021",
-    title: "Frontend Developer — Intern",
+    years: "11/2020 - 01/2021",
+    title: "Frontend Developer - Intern",
     place: "LibraFire · Novi Sad",
     points: [
       "Created responsive web applications using Laravel and modern JavaScript frameworks",
@@ -280,8 +277,8 @@ export const PATH: PathStop[] = [
   },
   {
     kind: "Internship",
-    years: "09/2021 — 11/2021",
-    title: "Frontend Developer — Intern",
+    years: "09/2021 - 11/2021",
+    title: "Frontend Developer - Intern",
     place: "PopArt Studio · Novi Sad",
     points: [
       "Designed WordPress themes with HTML, CSS, PHP, focusing on custom templates and functionalities",
@@ -294,7 +291,7 @@ export const PATH: PathStop[] = [
   },
   {
     kind: "Role",
-    years: "12/2021 — 04/2023",
+    years: "12/2021 - 04/2023",
     title: "Software Developer",
     place: "Adacta · Belgrade",
     points: [
@@ -320,7 +317,7 @@ export const PATH: PathStop[] = [
   },
   {
     kind: "Role",
-    years: "05/2023 — 07/2025",
+    years: "05/2023 - 07/2025",
     title: "Software Developer",
     place: "NovaLite · Novi Sad",
     photos: [
@@ -366,7 +363,7 @@ export const PATH: PathStop[] = [
   },
   {
     kind: "Now",
-    years: "07/2025 — present",
+    years: "07/2025 - present",
     title: "Software Developer",
     place: "Red Black Tree · Belgrade",
     points: [
@@ -432,8 +429,8 @@ export const COMMUNITY: Milestone[] = [
   {
     icon: "cap",
     label: "Education",
-    title: "First degree — Web Design",
-    detail: "VTSNS, Novi Sad · 2016 — 2019",
+    title: "First degree - Web Design",
+    detail: "VTSNS, Novi Sad · 2016 - 2019",
     value: 9.3,
     decimals: 2,
     unit: "/ 10",
@@ -442,7 +439,7 @@ export const COMMUNITY: Milestone[] = [
     icon: "mic",
     label: "Speaker · 09/2022",
     title: "Fullstack Development Conference",
-    detail: "Websites Workshop — work principles & advice for beginners",
+    detail: "Websites Workshop - work principles & advice for beginners",
     value: 2022,
     plain: true,
   },

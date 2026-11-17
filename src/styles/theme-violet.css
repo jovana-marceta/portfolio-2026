@@ -2,9 +2,9 @@
    The page itself is violet; text and accents ON the page are white.
    Cards (and other white surfaces) switch the tokens back to the regular light palette,
    so everything inside them stays dark text on white with violet accents.
-   Only the portfolio imports this file — admin and blog post pages keep the lavender light theme. */
+   Only the portfolio imports this file - admin and blog post pages keep the lavender light theme. */
 
-:root[data-theme="light"] {
+:root[data-theme='light'] {
   --paper: #7650d8;
   --ink: #ffffff;
   --ink-2: rgba(255, 255, 255, 0.88);
@@ -25,11 +25,23 @@
 }
 
 /* White surfaces: back to the normal light palette inside them */
-:root[data-theme="light"] :is(
-  .stack-card, .skills-stats div, .skills-legend .tech-pill,
-  .stop-card, .pcard a, .empty, .booker, .acard:not(.end), .quote-card,
-  .face, .hero-kicker, .float-chip, .theme-btn, .nav.scrolled .nav-pill
-) {
+:root[data-theme='light']
+  :is(
+    .stack-card,
+    .skills-stats div,
+    .skills-legend .tech-pill,
+    .stop-card,
+    .pcard a,
+    .empty,
+    .booker,
+    .acard:not(.end),
+    .quote-card,
+    .face,
+    .hero-kicker,
+    .float-chip,
+    .theme-btn,
+    .nav.scrolled .nav-pill
+  ) {
   --ink: #1b1030;
   --ink-2: #3d3157;
   --mute: #776c8c;
@@ -48,44 +60,106 @@
   --glass-soft: rgba(255, 255, 255, 0.5);
   color: var(--ink);
 }
-:root[data-theme="light"] :is(.theme-btn, .hero-kicker, .float-chip) { background: #fff; }
+:root[data-theme='light'] :is(.theme-btn, .hero-kicker, .float-chip) {
+  background: #fff;
+}
 
 /* Buttons on the violet page: white. Inside white cards they stay violet. */
-:root[data-theme="light"] .btn-primary { background: #fff; color: #7650d8; box-shadow: 0 10px 24px -12px rgba(20, 6, 48, 0.6); }
-:root[data-theme="light"] .btn-primary:hover { background: #f1eaff; }
-:root[data-theme="light"] :is(.booker, .stop-card, .pcard a) .btn-primary { background: var(--violet); color: #fff; }
-:root[data-theme="light"] :is(.booker, .stop-card, .pcard a) .btn-primary:hover { background: #5b21b6; }
+:root[data-theme='light'] .btn-primary {
+  background: #fff;
+  color: #7650d8;
+  box-shadow: 0 10px 24px -12px rgba(20, 6, 48, 0.6);
+}
+:root[data-theme='light'] .btn-primary:hover {
+  background: #f1eaff;
+}
+:root[data-theme='light'] :is(.booker, .stop-card, .pcard a) .btn-primary {
+  background: var(--violet);
+  color: #fff;
+}
+:root[data-theme='light'] :is(.booker, .stop-card, .pcard a) .btn-primary:hover {
+  background: #5b21b6;
+}
 
 /* Navigation */
-:root[data-theme="light"] .progress { background: #fff; }
-:root[data-theme="light"] .nav-ind { background: #fff; }
-:root[data-theme="light"] .nav-pill a.active { color: #7650d8; }
-:root[data-theme="light"] .nav.scrolled .nav-ind { background: var(--violet); }
-:root[data-theme="light"] .nav.scrolled .nav-pill a.active { color: #fff; }
-:root[data-theme="light"] .nav.scrolled .mark-dot { background: #fff; color: #7650d8; }
+:root[data-theme='light'] .progress {
+  background: #fff;
+}
+:root[data-theme='light'] .nav-ind {
+  background: #fff;
+}
+:root[data-theme='light'] .nav-pill a.active {
+  color: #7650d8;
+}
+:root[data-theme='light'] .nav.scrolled .nav-ind {
+  background: var(--violet);
+}
+:root[data-theme='light'] .nav.scrolled .nav-pill a.active {
+  color: #fff;
+}
+:root[data-theme='light'] .nav.scrolled .mark-dot {
+  background: #fff;
+  color: #7650d8;
+}
 
 /* Hero */
-:root[data-theme="light"] .ghost { -webkit-text-stroke-color: rgba(255, 255, 255, 0.18); }
-:root[data-theme="light"] .orbit { border-color: rgba(255, 255, 255, 0.4); }
-:root[data-theme="light"] .halo { background: radial-gradient(closest-side, rgba(255, 255, 255, 0.22), transparent 70%); }
-:root[data-theme="light"] .scroll-cue i::after { background: #fff; }
+:root[data-theme='light'] .ghost {
+  -webkit-text-stroke-color: rgba(255, 255, 255, 0.18);
+}
+:root[data-theme='light'] .orbit {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+:root[data-theme='light'] .halo {
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.22), transparent 70%);
+}
+:root[data-theme='light'] .scroll-cue i::after {
+  background: #fff;
+}
 
-/* About — lanyard strap in white so it shows on violet */
-:root[data-theme="light"] .strap { background: linear-gradient(90deg, #e9e1fb, #fff 45%, #f4efff 60%, #e9e1fb); }
-:root[data-theme="light"] .strap-text { color: #7650d8; }
+/* About - lanyard strap in white so it shows on violet */
+:root[data-theme='light'] .strap {
+  background: linear-gradient(90deg, #e9e1fb, #fff 45%, #f4efff 60%, #e9e1fb);
+}
+:root[data-theme='light'] .strap-text {
+  color: #7650d8;
+}
 
 /* Experience timeline */
-:root[data-theme="light"] .spine i { background: #fff; }
-:root[data-theme="light"] .stop .dot { background: #7650d8; }
-:root[data-theme="light"] .stop.lit .dot { background: #fff; box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.22); }
+:root[data-theme='light'] .spine i {
+  background: #fff;
+}
+:root[data-theme='light'] .stop .dot {
+  background: #7650d8;
+}
+:root[data-theme='light'] .stop.lit .dot {
+  background: #fff;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.22);
+}
 
 /* Community + booking + contact accents */
-:root[data-theme="light"] .pin-bar i { background: #fff; }
-:root[data-theme="light"] .email:hover { color: #e7dcff; }
-:root[data-theme="light"] .copy:hover { background: #fff; color: #7650d8; }
-:root[data-theme="light"] .badge-spin span { background: #fff; color: #7650d8; }
+:root[data-theme='light'] .pin-bar i {
+  background: #fff;
+}
+:root[data-theme='light'] .email:hover {
+  color: #e7dcff;
+}
+:root[data-theme='light'] .copy:hover {
+  background: #fff;
+  color: #7650d8;
+}
+:root[data-theme='light'] .badge-spin span {
+  background: #fff;
+  color: #7650d8;
+}
 
 /* Focus & selection need to stay visible on violet */
-:root[data-theme="light"] :focus-visible { outline-color: #fff; }
-:root[data-theme="light"] :is(.stack-card, .stop-card, .pcard, .booker, .face) :focus-visible { outline-color: var(--violet); }
-:root[data-theme="light"] ::selection { background: #fff; color: #7650d8; }
+:root[data-theme='light'] :focus-visible {
+  outline-color: #fff;
+}
+:root[data-theme='light'] :is(.stack-card, .stop-card, .pcard, .booker, .face) :focus-visible {
+  outline-color: var(--violet);
+}
+:root[data-theme='light'] ::selection {
+  background: #fff;
+  color: #7650d8;
+}
