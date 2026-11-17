@@ -12,7 +12,7 @@ export const PROFILE = {
   location: "Novi Sad, Serbia",
   github: "https://github.com/jovana-marceta",
   linkedin: "https://www.linkedin.com/in/jovanamarceta",
-  resume: "/jovana-marceta-cv.pdf",
+  resume: "/jovana-marceta-fullstack-engineer.pdf",
   summary:
     "Full-stack Software Engineer with 6+ years of experience delivering large-scale web applications in EdTech and enterprise environments. I build backend services and REST APIs with .NET / C# and Node.js (NestJS), and modern user interfaces in Angular and React. I’ve led Angular version upgrades, refactored legacy modules, and optimized performance in production systems used by 1,000+ users. I care about clean architecture, readable code, and shipping features that work reliably end to end.",
   education:
